@@ -69,3 +69,17 @@ To add more "op" (aka adminstrator) users to your Minecraft server, pass the Min
 The Java memory limit can be adjusted using the `JVM_OPTS` environment variable, where the default is the setting shown in the example (max and min at 2048 MB):
 
     docker run -e 'JVM_OPTS=-Xmx2048M -Xms2048M' ...
+
+## Credits
+
+Thank you Notch - Minecraft is teh awesome.
+
+Feed the Beast Crew - w00t on your bad selves. 
+
+This repository is largley swiped from https://github.com/rafaelmartins/docker-ftblite2 - Thank you for sharing! 
+
+Docker - totally revolutionary. I stand in awe, no lie.
+
+Finally - w00t on the github crew, Linus and all of the linux brethern, Admiral Grace Hopper, Ada Lovelace, and everyone else involved in computing. You are the wind beneath my container. 
+
+ooh - and direwolf20. Love your spotlights, let's play, watch him on youtube! 
