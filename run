@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p data
+chmod og+w data
+docker rm direwolf20_17
+docker run --name direwolf20_17 -d -p 25565:25565 -v /home/bortels/docker-direwolf20/data:/data -e VERSION=LATEST -e OPS=bortels -e "MOTD=Bortelsland" direwolf20_17

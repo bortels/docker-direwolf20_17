@@ -1,0 +1,30 @@
+# This is based on itzg/minecraft-server
+
+FROM itzg/ubuntu-openjdk-7
+
+# Adapted from rafaelmartins/ftblite2
+#MAINTAINER Rafael G. Martins <rafael@rafaelmartins.eng.br>
+
+MAINTAINER Tom Bortels <bortels@gmail.com>
+
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget unzip paxctl
+RUN addgroup --gid 1234 minecraft
+RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "minecraft user" minecraft
+RUN paxctl -C /usr/bin/java && paxctl -m /usr/bin/java
+
+USER minecraft
+
+EXPOSE 25565
+
+ADD start.sh /start
+
+VOLUME /data
+ADD server.properties /tmp/server.properties
+WORKDIR /data
+
+CMD /start
+
+ENV MOTD A Minecraft (direwolf20_17) Server Powered by Docker
+ENV LEVEL world
+ENV JVM_OPTS -Xms2048m -Xmx2048m -XX:PermSize=128m
+ENV VERSION 1.0.3
