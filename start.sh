@@ -35,4 +35,7 @@ fi
 
 sh ./FTBInstall.sh
 
+rm -f eula.txt
+echo "eula=true" > eula.txt
+
 java $JVM_OPTS -jar FTBServer-*.jar nogui
